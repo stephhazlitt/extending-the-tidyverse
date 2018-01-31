@@ -1,0 +1,44 @@
+---
+title: "Steph's Workshop Notes"
+output: pdf_document
+---
+
+## Steph's notes from lecture component of the workshop
+
+## Atomic Vectors
+
+Types of atomic vectors:
+1. logical
+2. integer
+3. double
+4. character
+5. complex
+6. raw
+
+Common properties of atomic vectors:
+- type
+- length 
+- attributes
+
+## NAs
+
+```
+NA == NA
+is.na()
+```
+
+## Six types of things in []?
+
+1. nothing (if you subset with nothing, you get everything)
+2. logical
+3. positive integers
+4. zero (prob no used often deliberately, but useful for making sure functions behave well)
+5. negative integers
+6. character
+
+## RStudio keyboard shortcuts
+[Multiple cursers!](https://support.rstudio.com/hc/en-us/community/posts/206374508-Multiple-cursors)
+Alt & select adds multiple cursers.
+`datapasta` package for some more tricks & tips
+
+
