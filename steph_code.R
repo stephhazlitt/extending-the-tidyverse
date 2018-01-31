@@ -32,3 +32,26 @@ add_cols <- function(x, y, where = 1) {
     cbind(x[lhs], y, x[-lhs])
   }
 }
+
+
+## purrr::map
+
+library(purrr)
+map_dbl(mtcars, mean)
+
+c(-10,0,10, 100) %>% map(rnorm, n = 10)
+
+OR 
+
+df <- c(-10,0,10, 100)
+map_dbl(df, rnorm, n = 10) ## errors as size of object is not same is object out
+
+map(df, rnorm, n = 10) ## takes in 10 elements and outputs 100 in a list
+
+iris %>%  map_int(dplyr::n_distinct)
+iris %>%  map_int(function(x) length(unique(x)))
+iris %>%  map_int(~ length(unique(.x)))
+
+input <- list(1:10, sqrt(4), 5, "n")
+map(input, log)
+

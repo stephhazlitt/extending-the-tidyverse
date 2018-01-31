@@ -1,9 +1,9 @@
 ---
 title: "Steph's Workshop Notes"
-output: pdf_document
+output: github_document
 ---
 
-## Steph's notes from lecture component of the workshop
+Steph's notes from lecture component of the Extending the Tidyverse RStudio workshop (Jan 31 - Feb 1 2018)
 
 ## Atomic Vectors
 
@@ -57,3 +57,31 @@ cat("!!!!!!!") ## useful trick to make sure you are seeing output from this func
 Rewrite code to make it easily to read, or make it faster.
 With unit tests in place, can ensure you don't change/break function as you attempt to rewrite.
 
+check_where(0) stop, where must be btw 1 and ncol(df), invalid value for where
+check_where(NA) where must be numeric
+check_where(1:10) where must be a scalar value
+check_where("a")
+
+## Functional Programming
+Use double [[]] for extracting single things, use single [] for multiple things
+
+NA (default is logical, coerced into other categories)
+NA_real_
+NA_character_
+NA_integer_
+
+``` r
+typeof(NA)
+typeof(NA_real_)
+```
+**alfred** tool for Mac -- find and open projects quickly
+
+
+## Purrr
+
+Map always return a list, modify() always returns same object of the same shape type as used (df -> df)
+Can also use map_dfr or map_dfc.
+
+What should always be true about the output
+  * should always be a df
+  
