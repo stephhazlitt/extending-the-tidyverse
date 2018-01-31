@@ -52,3 +52,8 @@ cat("!!!!!!!") ## useful trick to make sure you are seeing output from this func
   sample(ponies, n, replace = TRUE)
 }
 ```
+## Testing
+
+Rewrite code to make it easily to read, or make it faster.
+With unit tests in place, can ensure you don't change/break function as you attempt to rewrite.
+
