@@ -41,4 +41,14 @@ is.na()
 Alt & select adds multiple cursers.
 `datapasta` package for some more tricks & tips
 
+## Packages
+Do not use package.skeleton()
+Do use this: usethis:create_package()
+control plus dot = finder window for functions!
 
+```r
+rpony <- function(n) {
+cat("!!!!!!!") ## useful trick to make sure you are seeing output from this function
+  sample(ponies, n, replace = TRUE)
+}
+```
