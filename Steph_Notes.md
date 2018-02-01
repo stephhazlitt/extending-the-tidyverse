@@ -1,7 +1,7 @@
 Steph's Workshop Notes
 ================
 
-Steph's notes from lecture component of the Extending the Tidyverse workshop (Jan 31 - Feb 1 2018)
+Steph's notes from lecture component of the Extending the Tidyverse RStudio workshop (Jan 31 - Feb 1 2018)
 
 Atomic Vectors
 --------------
@@ -61,3 +61,25 @@ NA (default is logical, coerced into other categories) NA\_real\_ NA\_character\
 typeof(NA)
 typeof(NA_real_)
 ```
+
+**alfred** tool for Mac -- find and open projects quickly
+
+Purrr
+-----
+
+Map always return a list, modify() always returns same object of the same shape type as used (df -&gt; df) Can also use map\_dfr or map\_dfc.
+
+What should always be true about the output \* should always be a df \* ....
+
+Side-Effects
+------------
+
+-   printing something
+-   plotting something
+-   saving something
+-   changing environment like
+-   options()
+-   env vars
+-   setwd()
+-   browser()
+-   library()

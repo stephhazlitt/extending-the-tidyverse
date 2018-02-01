@@ -84,4 +84,21 @@ Can also use map_dfr or map_dfc.
 
 What should always be true about the output
   * should always be a df
+  * ....
+  
+## Side-Effects
+* printing something
+* plotting something
+* saving something
+* changing environment e.g.
+* options()
+* env vars
+* setwd()
+* browser()
+* library()
+
+Use print() in a pipe series to see the object on the fly but without messing with the pipe!
+
+  
+  
   

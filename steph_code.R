@@ -55,3 +55,39 @@ iris %>%  map_int(~ length(unique(.x)))
 input <- list(1:10, sqrt(4), 5, "n")
 map(input, log)
 
+# safely() modifies a function so it never fails
+input <- list(1:10, sqrt(4), 5, "n")
+output <- map(input, safely(log))
+View(output)
+
+## A more useful example
+urls <- c(
+  "https://google.com",
+  "https://en.wikipedia.org",
+  "asdfasdasdkfjlda"
+)
+# Fails
+contents <- map(urls, readLines, warn = FALSE)
+
+# Always succeeds
+contents <- urls %>%
+  map(safely(readLines), warn = FALSE)
+str(contents)
+View(contents)
+
+# transpose
+contents_foo <- urls %>%
+  map(safely(readLines), warn = FALSE) %>% 
+  transpose()
+
+what_worked <-  map_lgl(contents_foo$error, is.null)
+
+not_ok <- urls[!ok]
+ok <- urls[ok]
+
+
+View(contents_foo)
+
+## Your turn
+
+
