@@ -24,7 +24,7 @@ safely <-  function(.f) {
 }
 
 new_safely <- function(result = NULL, error = NULL) {
-  if (!xor(is.null(result), is.null(error))) {
+  if (!is.null(result) && !is.null(error)) {
     stop("One of `result` and `error` must be NULL", call. = FALSE)
   }
 
@@ -35,4 +35,14 @@ new_safely <- function(result = NULL, error = NULL) {
     ),
     class = "safely"
   )
+}
+
+print.safely <- function(x, ...) {
+  if (!is.null(x$error)) {
+  cat_line("<safely: error>")
+  cat_line(crayon::red("Error: "), x$error$message)
+  } else {
+    cat_line("<safely: ", crayon::green("ok"), ">")
+    print(x$result)
+  }
 }
