@@ -77,9 +77,26 @@ Side-Effects
 -   printing something
 -   plotting something
 -   saving something
--   changing environment like
+-   changing environment e.g.
 -   options()
 -   env vars
 -   setwd()
 -   browser()
 -   library()
+
+Use print() in a pipe series to see the object on the fly but without messing with the pipe!
+
+API Design
+----------
+
+-   optimize code for reading (readers) not writing, time reading code is much more than time writing code.
+-   small problems, frictions -- add up to big pain points.
+-   considering the pipe can lead to better APIs even if you are not using the pipe
+-   avoid dots in function names
+
+S3
+--
+
+&& use in if statements, scalar version of & (look up more on this later)
+
+Changing the class of an object -&gt; "R lets you point a loaded gun at your foot, but you should never pull the trigger" --Hadley

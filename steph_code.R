@@ -89,5 +89,22 @@ ok <- urls[ok]
 View(contents_foo)
 
 ## Your turn
+library(stringr)
+x <- c("bbaaab", "bbb", "bbaaba")
+str_locate(x, "a+")
+
+## APIs
+
+x <- 1:6
+attr(x, "max") <- 5
+attr(x, "max")
+attributes(x)
+
+## safely exercise
+library(purrr)
+safe_log <- safely(log)
+
+safe_log(10)
+safe_log("a")
 
 
