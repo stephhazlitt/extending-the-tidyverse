@@ -100,3 +100,5 @@ S3
 && use in if statements, scalar version of & (look up more on this later)
 
 Changing the class of an object -&gt; "R lets you point a loaded gun at your foot, but you should never pull the trigger" --Hadley
+
+Useful to create S3 objects for printing out methods

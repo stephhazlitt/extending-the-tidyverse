@@ -110,3 +110,5 @@ Use print() in a pipe series to see the object on the fly but without messing wi
 
 Changing the class of an object ->
 "R lets you point a loaded gun at your foot, but you should never pull the trigger" --Hadley
+
+Useful to create S3 objects for printing out methods

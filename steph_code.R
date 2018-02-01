@@ -107,4 +107,74 @@ safe_log <- safely(log)
 safe_log(10)
 safe_log("a")
 
+## Tidy Evaluation
+
+# make this code work
+var <- "cyl"
+mtcars %>% pull(var)
+mtcars[[var]] # answer
+
+package <- "ggplot2"
+library(package, character.only = TRUE)
+
+obj <- "mtcars"
+rm(obj)
+rm(list = obj)
+
+library(lobster)
+
+# Compare to my hand drawn diagrams
+ast(f(x, "y", 1)
+ast(y <- x * 10)
+
+lobstr::ast(function(x, y) {
+  if (x > y) {
+    x
+  } else {
+    y }
+})
+
+## Make this function work:
+grouped_mean <- function(df, group_var, mean_var) {
+
+   group_var <- rlang::enexpr(group_var)
+   mean_var <- rlang::enexpr(mean_var)
+   
+    df %>%
+    group_by(!!group_var) %>%
+    summarise(mean = mean(!!mean_var))
+}
+
+df <- data.frame(x = c(1, 1, 2), y = c(1, 2, 3))
+df %>% grouped_mean(x, y)
+
+## Should use enquo() instead of enexpr to avoid using objects in the function and instead
+## look for objects in the global environment.
+
+summarise(df,
+          mean = mean(a),
+          sum = sum(a),
+          n = n()
+)
+
+new_sum <- function(df, var) {
+  
+  var <- rlang::enquo(var)
+  
+  df %>% 
+    summarise(mean = mean(!!var),
+           sum = sum(!!var),
+           n = n())
+  
+}
+
+df <- data.frame(x = c(1, 1, 2), y = c(1, 2, 3))
+new_sum(df, x)
+new_sum(df, x*y)
+
+## Why enquo and not enexpr
+foo <- 1000
+new_sum(df, x+foo)
+
+
 
