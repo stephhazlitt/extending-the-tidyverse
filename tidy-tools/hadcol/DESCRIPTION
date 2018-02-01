@@ -1,0 +1,16 @@
+Package: hadcol
+Version: 0.0.0.9000
+Title: Hadley's utilities for adding columns
+Description: A small teaching example
+Authors@R: c(
+    person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
+    person("RStudio", role = "cph")
+  )
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)
+Suggests: 
+    testthat
