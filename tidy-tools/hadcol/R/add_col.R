@@ -1,12 +1,12 @@
 #' Add a column to a data frame
 #'
-#' Allows you to insert a new colum at arbitrary
+#' Allows you to insert a new column at arbitrary
 #' position. Will replace existing variable with
 #' the same name, if present.
 #'
 #' @param x A data frame
 #' @param name Name of variable to create. If variable of that name
-#'   already exists
+#'   already exists returns original variable.
 #' @param value Values to insert.
 #' @param where Position to insert. Use 1 to insert on LHS, or -1 to insert on
 #'   RHS.

@@ -176,5 +176,16 @@ new_sum(df, x*y)
 foo <- 1000
 new_sum(df, x+foo)
 
-
+## 
+new_sum <- function(df, var, name) {
+  
+  var <- rlang::enquo(var)
+  name <- rlang::enquo(name)
+  
+  df %>% 
+    summarise(mean = mean(!!var),
+              !!name := sum(!!var),
+              n = n())
+  
+}
 

@@ -4,13 +4,13 @@
 \alias{add_col}
 \title{Add a column to a data frame}
 \usage{
-add_col(x, name, value, where = -1)
+add_col(x, name, value, where = ncol(x) + 1)
 }
 \arguments{
 \item{x}{A data frame}
 
 \item{name}{Name of variable to create. If variable of that name
-already exists}
+already exists returns original variable.}
 
 \item{value}{Values to insert.}
 
@@ -18,7 +18,7 @@ already exists}
 RHS.}
 }
 \description{
-Allows you to insert a new colum at arbitrary
+Allows you to insert a new column at arbitrary
 position. Will replace existing variable with
 the same name, if present.
 }
